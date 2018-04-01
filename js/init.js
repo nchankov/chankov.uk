@@ -16,10 +16,6 @@
                 $('#quote-success').removeClass('hide');
                 form.addClass('hide');
                 button.addClass('hide');        
-            },
-            error:function(xhr,status,error){
-                alert(status);
-                console.log(error);
             }
         });
     });
