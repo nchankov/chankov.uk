@@ -6,11 +6,21 @@
     	e.preventDefault();
     	var button = $(this);
     	var form = $('#quote-form');
-    	$.post(form.prop('action'), form.serialize(), function(response) {
-    		$('#quote-success').removeClass('hide');
-    		form.addClass('hide');
-    		button.addClass('hide');
-    	});
+    	$.ajax({
+            url: form.prop('action'),
+            type: "POST",
+            crossDomain: true,
+            data: form.serialize(),
+            dataType: "json",
+            success: function(result) {
+                $('#quote-success').removeClass('hide');
+                form.addClass('hide');
+                button.addClass('hide');        
+            },
+            error:function(xhr,status,error){
+                alert(status);
+            }
+        });
     });
 
     $('.email-link').each(function(){
