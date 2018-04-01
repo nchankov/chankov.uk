@@ -15,7 +15,14 @@
             success: function(result) {
                 $('#quote-success').removeClass('hide');
                 form.addClass('hide');
-                button.addClass('hide');        
+                button.addClass('hide');
+            },
+            error: function(xhr,status,error){
+                alert(error);
+                console.log('error')
+                console.log(xhr);
+                console.log(status);
+                console.log(error);
             }
         });
     });
