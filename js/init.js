@@ -11,7 +11,7 @@
             type: "POST",
             crossDomain: true,
             data: form.serialize(),
-            dataType: "json",
+            dataType: "jsonp",
             success: function(result) {
                 $('#quote-success').removeClass('hide');
                 form.addClass('hide');
